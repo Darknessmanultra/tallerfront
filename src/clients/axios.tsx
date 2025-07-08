@@ -2,18 +2,12 @@ import axios from 'axios';
 
 const ApiBackend = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
-    headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json, text/plain, */*",
-    },
-    withCredentials: true,
+    withCredentials: false,
 });
 
 ApiBackend.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+  const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 

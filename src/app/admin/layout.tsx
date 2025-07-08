@@ -1,3 +1,4 @@
+"use client"
 import { useAdminGuard } from "@/hooks/useAdminGuard";
 import AdminNav from "@/components/Mycomponents/AdminNav";
 

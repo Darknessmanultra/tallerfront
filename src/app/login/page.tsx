@@ -1,3 +1,4 @@
+"use client";
 import LoginForm from "@/views/auth/LoginForm";
 
 

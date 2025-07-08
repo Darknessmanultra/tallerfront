@@ -1,3 +1,4 @@
+"use client";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 import UserNav from "@/components/Mycomponents/UserNav";
 import Footer from "@/components/Mycomponents/Footer";

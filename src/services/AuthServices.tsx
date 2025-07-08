@@ -2,11 +2,12 @@ import { ApiBackend } from "@/clients/axios";
 
 export async function loginUser(data: { email: string; password: string }) {
   const res = await ApiBackend.post("/auth/login", data);
-  const { token } = res.data;
+  const { token, user } = res.data;
 
   localStorage.setItem("token", token);
+  localStorage.setItem("user", JSON.stringify(user));
 
-  return token;
+  return res.data;
 }
 
 export async function registerUser(data: {

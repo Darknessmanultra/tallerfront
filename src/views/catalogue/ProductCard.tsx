@@ -13,7 +13,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <Card className="hover:shadow-lg transition">
             <CardContent className="p-4">
                 <img
-                src={product.urls[0]}
+                src={product.urls?.[0]}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded"
                 />

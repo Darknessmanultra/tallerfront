@@ -41,5 +41,7 @@ export const getProducts = async (params: ProductQueryParams): Promise<ProductRe
   return response.data;
 };
 
-export const getProductById = async (id: string) =>
-  ApiBackend.get(`/Product/${id}`).then((res) => res.data);
+export async function getProductById(id: string): Promise<Product> {
+  const res = await ApiBackend.get<Product>(`/products/${id}`);
+  return res.data;
+}
